@@ -28,4 +28,4 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: gen-files
-        path: /home/runner/work/server-model/server-model/app/src/main/generated
+        path: /home/runner/work/server-model/server-model/app/src/main/generated/
