@@ -1,0 +1,6 @@
+[submodule "app/src/main/auth-model"]
+	path = app/src/main/auth-model
+	url = https://github.com/Kotlang/auth-model
+[submodule "app/src/main/social-model"]
+	path = app/src/main/social-model
+	url = https://github.com/Kotlang/social-model
