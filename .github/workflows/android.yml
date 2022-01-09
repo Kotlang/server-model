@@ -30,4 +30,4 @@ jobs:
         name: gen-files
         path: /home/runner/work/server-model/server-model/app/src/main/generated/
     - name: Finding Files
-      run: ls /home/runner/work/server-model/server-model/app/src/main/
+      run: ls ${GITHUB_ACTION_PATH}
