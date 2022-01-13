@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "server-model"
 include ':app'
+include ':serverLib'
