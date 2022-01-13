@@ -32,17 +32,6 @@ android {
     }
 }
 
-def githubProperties = new Properties()
-githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
-
-
-def getVersionName = { ->
-    return "1.0.0" // Replace with version Name
-}
-
-def getArtificatId = { ->
-    return "kotlangServerLib" // Replace with library name ID
-}
 
 publishing {
 
@@ -52,9 +41,8 @@ publishing {
             url = uri("https://maven.pkg.github.com/Kotlang/server-model")
 
             credentials {
-                /**Create github.properties in root project folder file with gpr.usr=GITHUB_USER_ID  & gpr.key=PERSONAL_ACCESS_TOKEN**/
-                username = githubProperties['gpr.usr'] ?: System.getenv("GITHUB_ACTOR")
-                password = githubProperties['gpr.key'] ?: System.getenv("SERVER_KEY")
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("SERVER_KEY")
             }
         }
     }
