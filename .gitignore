@@ -13,6 +13,7 @@
 .externalNativeBuild
 .cxx
 local.properties
+github.properties
 generated
 .idea
 app/release
