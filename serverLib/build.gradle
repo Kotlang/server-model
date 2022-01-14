@@ -32,6 +32,16 @@ android {
     }
 }
 
+def githubProperties = new Properties()
+githubProperties.load(new FileInputStream(rootProject.file("github.properties"))) //Set env variable GPR_USER & GPR_API_KEY if not adding a properties file
+
+def getVersionName = { ->
+    return "1.0.1" // Replace with version Name
+}
+
+def getArtificatId = { ->
+    return "serverlib" // Replace with library name ID
+}
 
 publishing {
 
@@ -50,8 +60,8 @@ publishing {
             url = uri("https://maven.pkg.github.com/Kotlang/server-model")
 
             credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
+             username = githubProperties['gpr.usr'] ?: System.getenv("GITHUB_ACTOR")
+             password = githubProperties['gpr.key'] ?: System.getenv("GITHUB_TOKEN")
             }
         }
     }
