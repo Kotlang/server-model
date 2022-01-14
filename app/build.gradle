@@ -104,5 +104,5 @@ protobuf {
         }
     }
 
-    generatedFilesBaseDir = "$projectDir/../serverLib/src/main/generated"
+    generatedFilesBaseDir = "$projectDir/../serverLib/src/main/java/com/android/serverlib"
 }
