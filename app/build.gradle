@@ -37,10 +37,10 @@ android {
                 srcDir("src/main/auth-model/")
                 srcDir("src/main/social-model/")
             }
-            java {
-                srcDir("src/main/generated/debug/java")
-                srcDir("src/main/generated/debug/grpc")
-            }
+//            java {
+//                srcDir("src/main/generated/debug/java")
+//                srcDir("src/main/generated/debug/grpc")
+//            }
         }
     }
 }
@@ -104,5 +104,5 @@ protobuf {
         }
     }
 
-    generatedFilesBaseDir = "$projectDir/../serverLib/src/main/java/com/android/serverlib"
+    generatedFilesBaseDir = "$projectDir/../serverLib/src/main/generated"
 }

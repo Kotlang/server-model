@@ -30,13 +30,22 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    sourceSets {
+        main {
+            java {
+                srcDir("src/main/generated/debug/java")
+                srcDir("src/main/generated/debug/grpc")
+            }
+        }
+    }
 }
 
 def githubProperties = new Properties()
 githubProperties.load(new FileInputStream(rootProject.file("github.properties"))) //Set env variable GPR_USER & GPR_API_KEY if not adding a properties file
 
 def getVersionName = { ->
-    return "1.0.3" // Replace with version Name
+    return "1.0.6" // Replace with version Name
 }
 
 def getArtificatId = { ->
@@ -75,4 +84,21 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    //proto data store
+    implementation  "androidx.datastore:datastore-core:1.0.0-beta02"
+
+    //grpc
+    implementation 'javax.annotation:javax.annotation-api:1.3.2'
+    implementation 'io.grpc:grpc-core:1.38.0'
+    implementation 'io.grpc:grpc-okhttp:1.38.0'
+    implementation 'io.grpc:grpc-stub:1.38.0'
+    implementation('io.grpc:grpc-protobuf-lite:1.38.0') {
+        exclude module: "protobuf-lite"
+    }
+
+    //grpcKt
+    implementation "io.grpc:grpc-kotlin-stub:1.1.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0"
+    implementation 'androidx.datastore:datastore-rxjava3:1.0.0-beta02'
 }
