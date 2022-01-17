@@ -37,6 +37,9 @@ android {
                 srcDir("src/main/generated/debug/java")
                 srcDir("src/main/generated/debug/grpc")
             }
+            kotlin {
+                srcDir("src/main/generated/debug/grpcKt")
+            }
         }
     }
 }
@@ -45,7 +48,7 @@ def githubProperties = new Properties()
 githubProperties.load(new FileInputStream(rootProject.file("github.properties"))) //Set env variable GPR_USER & GPR_API_KEY if not adding a properties file
 
 def getVersionName = { ->
-    return "1.0.6" // Replace with version Name
+    return "1.0.9" // Replace with version Name
 }
 
 def getArtificatId = { ->
